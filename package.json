@@ -7,16 +7,18 @@
     "axios": "^0.19.0",
     "bootstrap": "^3.4.1",
     "clipboard": "^2.0.4",
+    "concurrently": "^5.0.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts start",
+    "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3001 && electron ."
   },
   "eslintConfig": {
     "extends": "react-app"

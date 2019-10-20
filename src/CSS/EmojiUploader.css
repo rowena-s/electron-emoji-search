@@ -1,0 +1,9 @@
+.add-emoji-form{
+  margin: 20px;
+  float: right;
+  position: fixed;
+  top: 200px;
+  right: 50px;
+}
+
+.hidden { display:none; }
