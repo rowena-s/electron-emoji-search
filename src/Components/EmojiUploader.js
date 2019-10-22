@@ -15,9 +15,11 @@ const EmojiUploader = () => {
  const onChange = event => {
     if (event.target.files[0].type !== "image/png"){
       event.target.value = null;
-    } else
+      //send message that only pngs are allowed
+    } else {
     setFile(event.target.files[0]); 
     setFileName(event.target.files[0].name); //this will actually be input from the emoji name 
+    }
   }
 
   const onSubmit =  async event => {
@@ -27,7 +29,7 @@ const EmojiUploader = () => {
     // data.append('name', fileName);
     console.log("data =", data);
     try {
-      const res = await axios.post('http://localhost:8000/upload', data, {
+      const res = await axios.post('/upload', data, {
         headers: {
           'Content-Type':'multipart/form-data'
         }

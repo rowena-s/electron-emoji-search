@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./Components/Header";
 import SearchInput from "./SearchInput";
 import EmojiResults from "./Components/EmojiResults";
 import filterEmoji from "./filterEmoji";
+import emojiList from "./emojiList.json"
 import EmojiUploader from "./Components/EmojiUploader"
 
 
@@ -14,36 +15,35 @@ import EmojiUploader from "./Components/EmojiUploader"
   //   };
   // }
 
-  // handleSearchChange = event => {
-  //   this.setState({
-  //     filteredEmoji: filterEmoji(event.target.value, 20)
-  //   });
-  // };
-
+  
   // render() {
-  //   return (
-  //     <div>
-  //       <Header headerImg={this.state.imagePath}/>
-  //       <SearchInput textChange={this.handleSearchChange} />
-  //       <div className="MainSection">
-  //       <EmojiResults emojiData={this.state.filteredEmoji} />
-  //       <AddEmoji/>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  const App = () => (
+    //   return (
+      //     <div>
+      //       <Header headerImg={this.state.imagePath}/>
+      //       <SearchInput textChange={this.handleSearchChange} />
+      //       <div className="MainSection">
+      //       <EmojiResults emojiData={this.state.filteredEmoji} />
+      //       <AddEmoji/>
+      //       </div>
+      //     </div>
+      //   );
+      // }
+      
+const App = () => {
+        const [emoji, filterEmoji] = useState(emojiList);
+        
+    return (
     <div className='container'>
       <div>
-         {/* <Header headerImg={this.state.imagePath}/>
-         <SearchInput textChange={this.handleSearchChange} /> */}
+         <Header />
+         <SearchInput />
          <div className="MainSection">
-         {/* <EmojiResults emojiData={this.state.filteredEmoji} /> */}
+         <EmojiResults emojiData={emoji} />
          <EmojiUploader/>
          </div>
       </div>
     </div>
-  );
+    );
+  };
 
 export default App;
